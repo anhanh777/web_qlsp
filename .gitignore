@@ -1,0 +1,27 @@
+# PHP / Composer
+vendor/
+composer.lock
+
+# Environments & Secrets
+.env
+.env.local
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Docker & OS
+.docker/
+Thumbs.db
+EHthumbs.db
+Desktop.ini
+.DS_Store
+
+# Project Specific
+uploads/*
+!uploads/.gitkeep

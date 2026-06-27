@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web_qlsp_app
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=root_password
+      - DB_NAME=quanao
+      - DB_PORT=3306
+    volumes:
+      - .:/var/www/html/web_qlsp
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: web_qlsp_db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=quanao
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
