@@ -23,3 +23,4 @@
 - [2026-06-28 21:41:52] feat(import): add excel export/import utility for products
 - [2026-06-28 21:41:52] fix(ajax): handle api exceptions gracefully in ajax_ai.php
 - [2026-06-28 21:41:53] feat(security): enable csrf protection tokens for product forms
+- [2026-06-28 21:41:53] docs(readme): add detailed guide for running docker containers
