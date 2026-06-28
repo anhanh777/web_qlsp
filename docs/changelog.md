@@ -21,3 +21,4 @@
 - [2026-06-28 21:41:51] chore(deps): update vendor dependencies in composer.json
 - [2026-06-28 21:41:51] style(login): implement dark mode responsive styles
 - [2026-06-28 21:41:52] feat(import): add excel export/import utility for products
+- [2026-06-28 21:41:52] fix(ajax): handle api exceptions gracefully in ajax_ai.php
