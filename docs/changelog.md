@@ -13,3 +13,4 @@
 - [2026-06-28 21:41:47] feat(orders): add status tracking (pending, processing, shipped)
 - [2026-06-28 21:41:48] fix(warehouse): fix inventory count discrepancy on order cancel
 - [2026-06-28 21:41:48] docs(config): document database configuration parameters
+- [2026-06-28 21:41:49] refactor(users): standardize user role checks in controllers
