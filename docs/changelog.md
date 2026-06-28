@@ -15,3 +15,4 @@
 - [2026-06-28 21:41:48] docs(config): document database configuration parameters
 - [2026-06-28 21:41:49] refactor(users): standardize user role checks in controllers
 - [2026-06-28 21:41:49] feat(banners): add drag-and-drop ordering for slide banners
+- [2026-06-28 21:41:50] feat(campaigns): implement flash sales campaign schedule
