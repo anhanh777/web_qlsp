@@ -19,3 +19,4 @@
 - [2026-06-28 21:41:50] fix(reviews): sanitize user review comment input
 - [2026-06-28 21:41:50] feat(collections): support sorting products inside collections
 - [2026-06-28 21:41:51] chore(deps): update vendor dependencies in composer.json
+- [2026-06-28 21:41:51] style(login): implement dark mode responsive styles
