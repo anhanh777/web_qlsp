@@ -9,3 +9,4 @@
 - [2026-06-28 21:41:45] feat(categories_list): support nested categories representation
 - [2026-06-28 21:41:46] fix(vouchers): handle expired voucher code validation errors
 - [2026-06-28 21:41:46] perf(product_add): optimize image upload and compression
+- [2026-06-28 21:41:47] feat(revenue): implement interactive charts for monthly earnings
