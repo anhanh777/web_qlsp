@@ -25,3 +25,4 @@
 - [2026-06-28 21:41:53] feat(security): enable csrf protection tokens for product forms
 - [2026-06-28 21:41:53] docs(readme): add detailed guide for running docker containers
 - [2026-06-28 21:41:54] refactor(database): clean up unused tables and backup queries
+- [2026-06-28 21:41:54] test(vouchers): write unit tests for discount calculation logic
