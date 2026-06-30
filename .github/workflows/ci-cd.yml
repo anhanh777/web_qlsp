@@ -57,7 +57,6 @@ jobs:
           cache-to: type=gha,mode=max
 
   deploy:
-    deploy:
     needs: build-docker
     runs-on: self-hosted  # 👈 THAY ĐỔI: Chuyển từ ubuntu-latest sang self-hosted để chạy trên máy ảo của bạn
     if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
