@@ -3,7 +3,7 @@
         <div class="card border-0 shadow-sm p-3" style="cursor: pointer;" onclick="window.location.href='/web_qlsp/revenue'">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <p class="text-muted small mb-1">DOANH THU THÁNG</p>
+                    <p class="text-muted small mb-1">MONTHLY REVENUE</p>
                     <h4 class="fw-bold mb-0 text-success" id="val_monthly_revenue">
                         <span class="spinner-border spinner-border-sm" role="status"></span>
                     </h4>
@@ -19,7 +19,7 @@
         <div class="card border-0 shadow-sm p-3" style="cursor: pointer;" onclick="window.location.href='/web_qlsp/orders?status=pending'">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <p class="text-muted small mb-1">ĐƠN HÀNG MỚI</p>
+                    <p class="text-muted small mb-1">NEW ORDER</p>
                     <h4 class="fw-bold mb-0 text-primary" id="val_pending_orders">
                         <span class="spinner-border spinner-border-sm" role="status"></span>
                     </h4>
@@ -35,7 +35,7 @@
         <div class="card border-0 shadow-sm p-3" style="cursor: pointer;" onclick="window.location.href='/web_qlsp/users'">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <p class="text-muted small mb-1">KHÁCH HÀNG</p>
+                    <p class="text-muted small mb-1">CLIENT</p>
                     <h4 class="fw-bold mb-0 text-warning" id="val_total_customers">
                         <span class="spinner-border spinner-border-sm" role="status"></span>
                     </h4>
@@ -51,7 +51,7 @@
         <div class="card border-0 shadow-sm p-3" style="cursor: pointer;" onclick="window.location.href='/web_qlsp/product_list'">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <p class="text-muted small mb-1">SẢN PHẨM</p>
+                    <p class="text-muted small mb-1">PRODUCT</p>
                     <h4 class="fw-bold mb-0 text-danger" id="val_total_products">
                         <span class="spinner-border spinner-border-sm" role="status"></span>
                     </h4>
