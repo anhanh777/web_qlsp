@@ -6,9 +6,9 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
  * and open the template in the editor.
  */
   
-$vnp_TmnCode = "ZIBGIKIA"; //Website ID in VNPAY System
-$vnp_HashSecret = "QPMIE3OYTFOK49VSBAVTWKZRFXVIV9I2"; //Secret key
-$vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+$vnp_TmnCode = getenv('VNP_TMN_CODE') ?: "ZIBGIKIA"; //Website ID in VNPAY System
+$vnp_HashSecret = getenv('VNP_HASH_SECRET') ?: "QPMIE3OYTFOK49VSBAVTWKZRFXVIV9I2"; //Secret key
+$vnp_Url = getenv('VNP_URL') ?: "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
 $vnp_Returnurl = "http://localhost/web_qlsp/payment/return";
 $vnp_apiUrl = "http://sandbox.vnpayment.vn/merchant_webapi/merchant.html";
 //Config input format

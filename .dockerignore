@@ -6,3 +6,6 @@ docker-compose.yml
 README.md
 vendor/
 node_modules/
+uploads/
+*.log
+.env
