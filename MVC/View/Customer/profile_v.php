@@ -216,10 +216,20 @@ $user = $data['user_info'] ?? null;
                     <div class="mb-4">
                         <label class="form-label fw-bold small">MẬT KHẨU MỚI</label>
                         <div class="position-relative">
-                            <input type="password" name="new_password" id="new_pass" class="form-control pe-5" placeholder="Tối thiểu 6 ký tự" required minlength="6">
+                            <input type="password" name="new_password" id="new_pass" class="form-control pe-5" placeholder="Tối thiểu 6 ký tự" required minlength="6" oninput="checkPasswordStrength(this.value)">
                             <span class="password-toggle-icon position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;" onclick="togglePassword('new_pass', this)">
                                 <i class="far fa-eye"></i>
                             </span>
+                        </div>
+                        <!-- Huu Giang: Thanh do do manh mat khau -->
+                        <div id="strength-meter" style="display:none; margin-top: 10px;">
+                            <div style="display: flex; gap: 4px; margin-bottom: 5px;">
+                                <div class="strength-bar" id="bar1" style="height:5px; flex:1; border-radius:4px; background:#e0e0e0; transition: background 0.3s;"></div>
+                                <div class="strength-bar" id="bar2" style="height:5px; flex:1; border-radius:4px; background:#e0e0e0; transition: background 0.3s;"></div>
+                                <div class="strength-bar" id="bar3" style="height:5px; flex:1; border-radius:4px; background:#e0e0e0; transition: background 0.3s;"></div>
+                                <div class="strength-bar" id="bar4" style="height:5px; flex:1; border-radius:4px; background:#e0e0e0; transition: background 0.3s;"></div>
+                            </div>
+                            <small id="strength-label" style="font-size: 12px; font-weight: 600;"></small>
                         </div>
                     </div>
 
@@ -291,6 +301,37 @@ $user = $data['user_info'] ?? null;
             }
             reader.readAsDataURL(input.files[0]);
         }
+    }
+
+    // Huu Giang: Do do manh mat khau - hien thi thanh mau va nhan
+    function checkPasswordStrength(value) {
+        const meter = document.getElementById('strength-meter');
+        const label = document.getElementById('strength-label');
+        const bars  = [document.getElementById('bar1'), document.getElementById('bar2'),
+                       document.getElementById('bar3'), document.getElementById('bar4')];
+
+        if (value.length === 0) { meter.style.display = 'none'; return; }
+        meter.style.display = 'block';
+
+        let score = 0;
+        if (value.length >= 6)  score++;
+        if (value.length >= 10) score++;
+        if (/[A-Z]/.test(value) && /[a-z]/.test(value)) score++;
+        if (/[0-9]/.test(value) && /[^A-Za-z0-9]/.test(value)) score++;
+
+        const levels = [
+            { color: '#ef4444', text: 'Rất yếu',    fill: 1 },
+            { color: '#f97316', text: 'Yếu',         fill: 2 },
+            { color: '#eab308', text: 'Trung bình',  fill: 3 },
+            { color: '#22c55e', text: 'Mạnh',        fill: 4 },
+        ];
+        const lv = levels[score] ?? levels[0];
+
+        bars.forEach((bar, i) => {
+            bar.style.background = i < lv.fill ? lv.color : '#e0e0e0';
+        });
+        label.style.color = lv.color;
+        label.textContent  = 'Độ mạnh: ' + lv.text;
     }
 
     // 3. ẨN/HIỆN MẬT KHẨU
