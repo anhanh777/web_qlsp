@@ -222,5 +222,19 @@ class orders_m extends connectDB {
         $row = mysqli_fetch_array($result);
         return $row['total'];
     }
+
+    // Huu Giang: Thong ke tong quan don hang - dung cho Dashboard admin
+    function orders_getStats() {
+        $sql = "SELECT
+                    COUNT(*) as tong_don,
+                    SUM(CASE WHEN status = 'pending'   THEN 1 ELSE 0 END) as cho_xac_nhan,
+                    SUM(CASE WHEN status = 'shipping'  THEN 1 ELSE 0 END) as dang_giao,
+                    SUM(CASE WHEN status = 'delivered' THEN 1 ELSE 0 END) as da_giao,
+                    SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) as da_huy,
+                    SUM(total_money) as tong_doanh_thu
+                FROM orders";
+        $result = mysqli_query($this->con, $sql);
+        return mysqli_fetch_assoc($result);
+    }
 }
 ?>
