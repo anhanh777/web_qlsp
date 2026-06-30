@@ -27,7 +27,11 @@
 
 <div class="sidebar">
     <div class="sidebar-brand" style="cursor: pointer;" onclick="window.location.href='/web_qlsp/overview'">
+<<<<<<< HEAD
         COOLMATE<span style="color:#2f5acf">.ME</span>
+=======
+        BA_DUY_MATE<span style="color:#2f5acf">.ME</span>
+>>>>>>> 3ada29d12154c8186730eb967831154c17a10a1c
     </div>
     
     <a href="/web_qlsp/overview" class="<?= isActive(['overview'], $currentRoute) ?>">
