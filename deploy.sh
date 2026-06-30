@@ -15,7 +15,7 @@ git pull origin "$BRANCH"
 
 # 2. Xây dựng lại và khởi chạy Container
 echo "-> Đang biên dịch và khởi động Container..."
-sudo docker compose up -d --build
+docker compose up -d --build
 
 # 3. Thực hiện kiểm tra sức khỏe hệ thống sau khi deploy
 echo "-> Đang kiểm tra sức khỏe ứng dụng sau triển khai..."
@@ -29,7 +29,7 @@ fi
 
 # 4. Dọn dẹp các Docker image rác không còn sử dụng để tiết kiệm ổ cứng
 echo "-> Đang dọn dẹp các Docker image thừa..."
-sudo docker image prune -f
+docker image prune -f
 
 echo "=========================================================="
 echo "CẬP NHẬT THÀNH CÔNG! HỆ THỐNG SẴN SÀNG."
