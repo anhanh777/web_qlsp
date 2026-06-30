@@ -15,45 +15,39 @@ class users_m extends connectDB {
     }
     
     function users_delete($id) {
-        $sql = "DELETE FROM users WHERE id=$id";
-        return mysqli_query($this->con, $sql);
+        // Huu Giang: Dung Prepared Statement tranh SQL Injection cho lenh xoa
+        $stmt = $this->con->prepare("DELETE FROM users WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
     }
     
     public function users_insert_default($full_name, $email, $phone, $password, $google_id, $avatar, $province, $district, $ward, $address) {
-    // 1. BẢO MẬT: Làm sạch dữ liệu đầu vào để tránh SQL Injection
-    // (Lưu ý: $this->con là biến kết nối CSDL của bạn)
-    $full_name = mysqli_real_escape_string($this->con, $full_name);
-    $email     = mysqli_real_escape_string($this->con, $email);
-    $phone     = mysqli_real_escape_string($this->con, $phone);
-    $password  = mysqli_real_escape_string($this->con, $password); 
-    
+        // Huu Giang: Ma hoa mat khau bang bcrypt truoc khi luu vao CSDL
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    // 2. KIỂM TRA TRÙNG EMAIL
-    $check_email = "SELECT id FROM users WHERE email = '$email' LIMIT 1";
-    $rs_email = mysqli_query($this->con, $check_email);
-    if (mysqli_num_rows($rs_email) > 0) {
-        return "EMAIL_EXISTED"; 
+        // Huu Giang: Kiem tra trung email bang Prepared Statement
+        $check_email = $this->con->prepare("SELECT id FROM users WHERE email = ? LIMIT 1");
+        $check_email->bind_param("s", $email);
+        $check_email->execute();
+        if ($check_email->get_result()->num_rows > 0) return "EMAIL_EXISTED";
+
+        // Huu Giang: Kiem tra trung so dien thoai bang Prepared Statement
+        $check_phone = $this->con->prepare("SELECT id FROM users WHERE phone = ? LIMIT 1");
+        $check_phone->bind_param("s", $phone);
+        $check_phone->execute();
+        if ($check_phone->get_result()->num_rows > 0) return "PHONE_EXISTED";
+
+        // Huu Giang: INSERT dung Prepared Statement - an toan tuyet doi khoi SQL Injection
+        $stmt = $this->con->prepare(
+            "INSERT INTO users (full_name, email, phone, password, google_id, avatar, province_code, district_code, ward_code, address_detail)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        );
+        $stmt->bind_param("ssssssssss",
+            $full_name, $email, $phone, $hashed_password,
+            $google_id, $avatar, $province, $district, $ward, $address
+        );
+        return $stmt->execute() ? true : false;
     }
-
-    // 3. KIỂM TRA TRÙNG SỐ ĐIỆN THOẠI
-    $check_phone = "SELECT id FROM users WHERE phone = '$phone' LIMIT 1";
-    $rs_phone = mysqli_query($this->con, $check_phone);
-    if (mysqli_num_rows($rs_phone) > 0) {
-        return "PHONE_EXISTED"; 
-    }
-
-    // 4. NẾU KHÔNG TRÙNG, TIẾN HÀNH THÊM MỚI (INSERT)
-    $sql = "INSERT INTO users (full_name, email, phone, password, google_id, avatar, province_code, district_code, ward_code, address_detail) 
-            VALUES ('$full_name', '$email', '$phone', '$password', '$google_id', '$avatar', '$province', '$district', '$ward', '$address')";
-    
-    $insert_result = mysqli_query($this->con, $sql);
-
-    if ($insert_result) {
-        return true; // Hoặc return "SUCCESS";
-    } else {
-        return false; // Lỗi do Database
-    }
-}
     function users_checkLogin($email) {
         // Truy vấn lấy thông tin người dùng theo email
         $sql = "SELECT * FROM users WHERE email = '$email' ";
