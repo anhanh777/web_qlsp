@@ -24,7 +24,7 @@
     <div class="container-fluid px-lg-5">
         <a class="navbar-brand me-4" href="/web_qlsp/home">
 <div class="logo-coolmate-tech">
-  DUY_***_MATE<span class="dot">.</span>
+  COOLMATE<span class="dot">.</span>
 </div>     </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -230,7 +230,7 @@
     <div class="container">
         <div class="footer-top">
             <div class="footer-cta">
-                <h2 class="footer-heading-lg">MINMATE lắng nghe bạn!</h2>
+                <h2 class="footer-heading-lg">COOLMATE lắng nghe bạn!</h2>
                 <p class="footer-desc">Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.</p>
                 <a href="#" class="btn-feedback">Đóng góp ý kiến <i class="fa-solid fa-arrow-right"></i></a>
                 <div class="social-icons mt-3">
@@ -262,9 +262,9 @@
 
         <div class="footer-middle">
             <div class="footer-col">
-                <h3 class="footer-title">DUYMATE</h3>
+                <h3 class="footer-title">COOLMATE</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Tài khoản DuyMate</a></li>
+                    <li><a href="#">Tài khoản COOLMATE</a></li>
                     <li><a href="#">Đăng kí thành viên</a></li>
                     <li><a href="#">Ưu đãi & Đặc quyền</a></li>
                 </ul>
