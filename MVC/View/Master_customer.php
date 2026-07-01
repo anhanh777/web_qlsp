@@ -230,7 +230,7 @@
     <div class="container">
         <div class="footer-top">
             <div class="footer-cta">
-                <h2 class="footer-heading-lg">COOLMATE lắng nghe bạn!</h2>
+                <h2 class="footer-heading-lg">MINMATE lắng nghe bạn!</h2>
                 <p class="footer-desc">Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.</p>
                 <a href="#" class="btn-feedback">Đóng góp ý kiến <i class="fa-solid fa-arrow-right"></i></a>
                 <div class="social-icons mt-3">
