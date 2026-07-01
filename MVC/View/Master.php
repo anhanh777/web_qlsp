@@ -49,7 +49,7 @@
     <a href="/web_qlsp/users" class="<?= isActive(['users'], $currentRoute) ?>">
         <i class="fas fa-users"></i> Customers
     </a>
-
+//chú thích
     <a href="/web_qlsp/warehouse" class="<?= isActive(['warehouse'], $currentRoute) ?>">
         <i class="fa-solid fa-warehouse"></i></i> Inventory
     </a>
@@ -116,7 +116,7 @@
     </div>
 
 </div>
-
+//chú thích
 
     <style>
         .header {
