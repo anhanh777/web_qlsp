@@ -230,7 +230,11 @@
     <div class="container">
         <div class="footer-top">
             <div class="footer-cta">
+<<<<<<< HEAD
                 <h2 class="footer-heading-lg">MINMATE lắng nghe bạn!</h2>
+=======
+                <h2 class="footer-heading-lg">DUYMATE lắng nghe bạn!</h2>
+>>>>>>> f549eebbfd6bed00e841c7a41c3ed4f2dcd742a4
                 <p class="footer-desc">Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.</p>
                 <a href="#" class="btn-feedback">Đóng góp ý kiến <i class="fa-solid fa-arrow-right"></i></a>
                 <div class="social-icons mt-3">
@@ -252,7 +256,7 @@
                     <i class="fa-solid fa-envelope"></i>
                     <div class="contact-text">
                         <span>Email</span>
-                        <strong>Cool@coolmate.me</strong>
+                        <strong>Support@duymate.me</strong>
                     </div>
                 </div>
             </div>
@@ -262,9 +266,9 @@
 
         <div class="footer-middle">
             <div class="footer-col">
-                <h3 class="footer-title">COOLCLUB</h3>
+                <h3 class="footer-title">DUYMATE</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Tài khoản CoolClub</a></li>
+                    <li><a href="#">Tài khoản DuyMate</a></li>
                     <li><a href="#">Đăng kí thành viên</a></li>
                     <li><a href="#">Ưu đãi & Đặc quyền</a></li>
                 </ul>
