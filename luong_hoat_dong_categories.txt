@@ -14,5 +14,5 @@ update, hoặc delete vào database, rồi trả JSON response về frontend, Ja
 kết quả và hiển thị thông báo SweetAlert, nếu thành công thì gọi lại loadData() để reload bảng.
 Tương tự với export Excel và import Excel, controller sẽ xử lý và trả dữ liệu hoặc file về client.
 
-Vắn tắt là: View gọi API $\rightarrow$ Controller xử lý validate + gọi Model $\rightarrow$ 
+Sửa tắt là: View gọi API $\rightarrow$ Controller xử lý validate + gọi Model $\rightarrow$ 
 Model query database $\rightarrow$ Controller trả JSON $\rightarrow$ View cập nhật UI.
