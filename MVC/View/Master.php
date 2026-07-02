@@ -31,59 +31,59 @@
     </div>
     
     <a href="/web_qlsp/overview" class="<?= isActive(['overview'], $currentRoute) ?>">
-        <i class="fas fa-home"></i> Tổng quan
+        <i class="fas fa-home"></i> Overview
     </a>
     
 <a href="/web_qlsp/product_list" class="<?= isActive(['product_list','product_add'], $currentRoute) ?>">
-        <i class="fas fa-tshirt"></i> Sản phẩm
+        <i class="fas fa-tshirt"></i> Products
     </a>
 
     <a href="/web_qlsp/categories_list" class="<?= isActive(['categories_list'], $currentRoute) ?>">
-            <i class="fas fa-list"></i> Danh mục
+            <i class="fas fa-list"></i> Categories
         </a>
 
     <a href="/web_qlsp/orders" class="<?= isActive(['orders'], $currentRoute) ?>">
-        <i class="fas fa-shopping-bag"></i> Đơn hàng
+        <i class="fas fa-shopping-bag"></i> Orders
     </a>
     
     <a href="/web_qlsp/users" class="<?= isActive(['users'], $currentRoute) ?>">
-        <i class="fas fa-users"></i> Khách hàng
+        <i class="fas fa-users"></i> Customers
     </a>
-
+//chú thích
     <a href="/web_qlsp/warehouse" class="<?= isActive(['warehouse'], $currentRoute) ?>">
-        <i class="fa-solid fa-warehouse"></i></i> Kho hàng
+        <i class="fa-solid fa-warehouse"></i></i> Inventory
     </a>
 
     <a href="/web_qlsp/collections" class="<?= isActive(['collections'], $currentRoute) ?>">
-    <i class="fas fa-layer-group"></i> Bộ sưu tập
+    <i class="fas fa-layer-group"></i> Collections
 </a>
 
 <a href="/web_qlsp/vouchers" class="<?= isActive(['vouchers'], $currentRoute) ?>">
-    <i class="fas fa-ticket-alt"></i> Mã giảm giá
+    <i class="fas fa-ticket-alt"></i> Coupons
 </a>
 
 
 <a href="/web_qlsp/banners" class="nav-link <?= isActive(['banners'], $currentRoute) ?>">
     <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
-    Quản lý Banner
+    Banner Management
 </a>
 
 <a href="/web_qlsp/campaigns" class="nav-link <?= isActive(['campaigns'], $currentRoute) ?>">
     <div class="sb-nav-link-icon"><i class="fas fa-fire"></i></div>
-    Quản lý Campaign
+    Campaign Management
 </a>
 
 <a href="/web_qlsp/revenue" class="nav-link <?= isActive(['revenue'], $currentRoute) ?>">
     <div class="sb-nav-link-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-    Doanh thu
+    Revenue
 </a>
 <a href="/web_qlsp/reviews" class="nav-link <?= isActive(['reviews'], $currentRoute) ?>">
     <div class="sb-nav-link-icon"><i class="fa-solid fa-star"></i></div>
-    Đánh giá sản phẩm
+    Product Reviews
 </a>
 <a href="/web_qlsp/home" class="nav-link" target="_blank">
     <div class="sb-nav-link-icon"><i class="fa-solid fa-store"></i></div>
-    Xem trang khách hàng
+    View Customer Site
 </a>
 
 <?php if (isset($_SESSION['user_id'])): ?>
@@ -116,7 +116,7 @@
     </div>
 
 </div>
-
+//chú thích
 
     <style>
         .header {
@@ -141,4 +141,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
+    //chú thích
 </html>

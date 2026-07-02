@@ -24,7 +24,7 @@
     <div class="container-fluid px-lg-5">
         <a class="navbar-brand me-4" href="/web_qlsp/home">
 <div class="logo-coolmate-tech">
-  COOLMATE<span class="dot">.</span>
+COOLMATE<span class="dot">.</span>
 </div>     </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -252,7 +252,7 @@
                     <i class="fa-solid fa-envelope"></i>
                     <div class="contact-text">
                         <span>Email</span>
-                        <strong>Cool@coolmate.me</strong>
+                        <strong>Support@duymate.me</strong>
                     </div>
                 </div>
             </div>
@@ -262,9 +262,9 @@
 
         <div class="footer-middle">
             <div class="footer-col">
-                <h3 class="footer-title">COOLCLUB</h3>
+                <h3 class="footer-title">COOLMATE</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Tài khoản CoolClub</a></li>
+                    <li><a href="#">Tài khoản COOLMATE</a></li>
                     <li><a href="#">Đăng kí thành viên</a></li>
                     <li><a href="#">Ưu đãi & Đặc quyền</a></li>
                 </ul>

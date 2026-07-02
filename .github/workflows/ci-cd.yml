@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main", "master", "develop" ]
+    branches: [ "develop", "main" ]
   pull_request:
-    branches: [ "main", "master", "develop" ]
+    branches: [ "develop", "main" ]
 
 jobs:
   lint-and-test:
@@ -12,12 +12,24 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          coverage: none
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --no-scripts
 
       - name: Check PHP Syntax (Lint)
         run: |
@@ -29,24 +41,29 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Build Docker Image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
-          push: false # Đặt thành true khi đã cấu hình Docker Hub
+          push: false
           tags: web-qlsp:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
   deploy:
     needs: build-docker
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: self-hosted  # 👈 THAY ĐỔI: Chuyển từ ubuntu-latest sang self-hosted để chạy trên máy ảo của bạn
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
     steps:
-      - name: Trigger Render Deploy Hook
+      - name: Deploy Application locally
         run: |
-          curl -f -sX GET "${{ secrets.RENDER_DEPLOY_HOOK }}"
+          cd /opt/web_qlsp
+          git fetch origin
+          git reset --hard origin/develop
+          bash deploy.sh

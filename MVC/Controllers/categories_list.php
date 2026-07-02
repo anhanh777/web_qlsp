@@ -124,9 +124,9 @@ class categories_list extends controllers {
         $sheet = $objExcel->getActiveSheet()->setTitle('Danh_Muc_San_Pham');
 
         $rowCount = 1;
-        $sheet->setCellValue('A'.$rowCount, 'ID');
+        $sheet->setCellValue('A'.$rowCount, 'ID_Danh Mục');
         $sheet->setCellValue('B'.$rowCount, 'TÊN DANH MỤC');
-        $sheet->setCellValue('C'.$rowCount, 'SLUG');
+        $sheet->setCellValue('C'.$rowCount, 'SLUG_Ảnh nhỏ');
         $sheet->setCellValue('D'.$rowCount, 'HÌNH ẢNH');
         $sheet->getStyle('A1:D1')->getFont()->setBold(true);
 
